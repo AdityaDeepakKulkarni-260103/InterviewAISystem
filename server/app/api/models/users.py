@@ -11,5 +11,11 @@ class User(Base, db.Model):
     email = Column(String(120), unique=True, nullable=False)
     password = Column(String(128), nullable=False)
 
+    def __init__(self,**kwargs):
+        for property,value in kwargs.items():
+            if hasattr(value,'__iter__') and not isinstance(value,str):
+                value=value[0]
+            setattr(self,property,value)
+
     def __repr__(self):
         return f"User('{self.username}', '{self.email}')"

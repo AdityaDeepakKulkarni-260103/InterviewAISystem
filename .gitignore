@@ -2,5 +2,6 @@ server/.env
 server/__pycache__
 server/app/__pycache__
 server/migrations/__pycache__
+server/migrations/versions/__pycache__
 server/app/api/models/__pycache__
 server/myenv
